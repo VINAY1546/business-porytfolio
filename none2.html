@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>charts
+</title>
+<link rel="stylesheet" href="style.css" >
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Sales', 'Expenses'],
+          ['Jan',  1000,      450],
+          ['Feb',  970,      460],
+          ['Mar',  960,       620],
+          ['Apr',  1050,      450],
+          ['May',  1220,      1220],
+          ['June',  970,      460],
+          ['July',  1004,       820],
+          ['Aug',  1250,      540],
+	  ['Sept',  1240,      900],
+          ['Oct',  1070,      960],
+          ['Nov',  1560,       1550],
+          ['Dec',  1300,      1540]
+        ]);
+
+        var options = {
+          title: 'Company 2022 Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+<div id="curve_chart" class="chart"></div>
+</body>
+</html>

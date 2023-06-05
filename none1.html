@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>charts
+</title>
+<link rel="stylesheet" href="style.css" >
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Sales', 'Expenses'],
+          ['Jan',  700,      400],
+          ['Feb',  870,      460],
+          ['Mar',  1160,       520],
+          ['Apr',  1350,      650],
+          ['May',  920,      700],
+          ['June',  970,      860],
+          ['July',  1064,       820],
+          ['Aug',  1250,      540],
+	  ['Sept',  1340,      900],
+          ['Oct',  1270,      1260],
+          ['Nov',  1560,       1150],
+          ['Dec',  1600,      1500]
+        ]);
+
+        var options = {
+          title: 'Company 2021 Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+<div id="curve_chart" class="chart"></div>
+</body>
+</html>

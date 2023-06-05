@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>charts
+</title>
+<link rel="stylesheet" href="style.css" >
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales'],
+          ['2019',     4],
+          ['2020',      5],
+          ['2021',  6],
+          ['2022', 6],
+          ['2023',    5]
+        ]);
+
+        var options = {
+          title: 'BUSINESS STATS FROM YEAR 2019-2023'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+</head>
+<body bgcolor="#fcb603">
+ <div id="piechart" style="width: 1900px; height: 900px;"></div>
+
+</body>
+</html>
